@@ -11,7 +11,7 @@ class MockRedis
       assert_scorey(score)
 
       retval = !zscore(key, member)
-      with_zset_at(key) {|z| z.add(score, member)}
+      with_zset_at(key) {|z| z.add(score, member.to_s)}
       retval
     end
 
